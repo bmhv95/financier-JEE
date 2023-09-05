@@ -216,14 +216,14 @@
                             </user>
                         </users>
                     </add-user>
+                    <jbossHome>C:\wildfly-26.1.3.Final - Copy</jbossHome>
                     <commands>
                         <!--Add postgres 42.6.0 .jar as module -->
-                        <command>module add --name=org.postgres --resources=${settings.localRepository}/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar --dependencies=javax.api,javax.transaction.api</command>
+<!--                        <command>module add &#45;&#45;name=org.postgres &#45;&#45;resources=${settings.localRepository}/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar &#45;&#45;dependencies=javax.api,javax.transaction.api</command>-->
                         <!--Add above module as Driver for datasources -->
-                        <command>/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)</command>
+<!--                        <command>/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)</command>-->
                         <!--Add datasource using above Driver -->
-                        <command>data-source add --jndi-name=java:/financierDS --name=financierDS --connection-url=jdbc:postgresql://localhost:5432/financierv1 --driver-name=postgres --user-name=company
-                        </command>
+<!--                        <command>data-source add &#45;&#45;jndi-name=java:/financierDS &#45;&#45;name=financierDS &#45;&#45;connection-url=jdbc:postgresql://localhost:5432/financierv1 &#45;&#45;driver-name=postgres &#45;&#45;user-name=company</command>-->
                     </commands>
                 </configuration>
             </plugin>
