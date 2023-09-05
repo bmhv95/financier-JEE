@@ -17,4 +17,5 @@ public class HelloWorld {
     public String hello(@QueryParam("name") String name) {
         return "Hello " + name;
     }
+
 }
