@@ -1,6 +1,6 @@
 package org.financier.v1.service;
 
-import org.financier.v1.DAO.AccountDAO;
+import org.financier.v1.dao.AccountDAO;
 import org.financier.v1.entity.Account;
 import org.financier.v1.exception.ResourceNotFoundException;
 

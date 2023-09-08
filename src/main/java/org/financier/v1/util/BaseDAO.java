@@ -19,7 +19,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public abstract class BaseDAO<E> {
 
-    private final Class<E> entityClass;
+    protected final Class<E> entityClass;
     @PersistenceContext(name = "financier")
     protected EntityManager em;
 
@@ -33,6 +33,16 @@ public abstract class BaseDAO<E> {
     }
 
     public void flush(){ em.flush();}
+
+    public void remove(E entity) {
+        em.remove(entity);
+        em.flush();
+    }
+
+    public void removeById(Long id) {
+        em.remove(em.getReference(entityClass, id));
+        em.flush();
+    }
 
     public Optional<E> findById(Long id) {
         return Optional.ofNullable(em.find(entityClass, id));

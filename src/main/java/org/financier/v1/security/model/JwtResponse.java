@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.financier.v1.entity.EnumRole;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,6 +16,4 @@ public class JwtResponse {
     private String token;
 
     private String email;
-    private EnumRole role;
-    private boolean status;
 }
